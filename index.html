@@ -569,8 +569,22 @@
   .book-form .fine { text-align: center; font-size: 12px; color: var(--ink-3); margin-top: 18px; }
 
   /* FOOTER */
-  footer.foot { padding: 36px 0; border-top: 1px solid var(--line); background: var(--paper); }
-  footer.foot .inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-3); font-weight: 400; letter-spacing: 0.005em; }
+  footer.foot { background: var(--ink); color: rgba(255,255,255,0.62); padding: 96px 0 36px; margin-top: 0; }
+  footer.foot .foot-top { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: end; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+  footer.foot .foot-statement { font-family: 'Fraunces', serif; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.02; letter-spacing: -0.028em; color: #fff; max-width: 14ch; }
+  footer.foot .foot-statement em { font-style: italic; color: var(--amber); font-weight: 400; }
+  footer.foot .foot-cta-col { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+  footer.foot .foot-cta-col p { font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.72); max-width: 38ch; }
+  footer.foot .foot-cta { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; background: #fff; color: var(--ink); font-size: 14.5px; font-weight: 500; letter-spacing: -0.005em; transition: all 200ms var(--ease); }
+  footer.foot .foot-cta:hover { background: var(--amber); color: #fff; }
+  footer.foot .foot-mid { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,0.10); flex-wrap: wrap; }
+  footer.foot .foot-brand { display: flex; align-items: center; gap: 12px; font-weight: 600; color: #fff; letter-spacing: -0.015em; font-size: 17px; }
+  footer.foot .foot-brand .mark { width: 32px; height: 32px; border-radius: 8px; background: #fff; color: var(--ink); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; letter-spacing: -0.02em; }
+  footer.foot .foot-links { display: flex; gap: 28px; flex-wrap: wrap; }
+  footer.foot .foot-links a { font-size: 14px; color: rgba(255,255,255,0.72); font-weight: 500; transition: color 180ms var(--ease); }
+  footer.foot .foot-links a:hover { color: var(--amber); }
+  footer.foot .foot-bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; font-size: 12.5px; color: rgba(255,255,255,0.42); flex-wrap: wrap; letter-spacing: 0.01em; }
+  footer.foot .foot-bottom .meta { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; }
 
   /* RESPONSIVE */
   @media (max-width: 1024px) {
@@ -590,6 +604,11 @@
     nav.top .links { display: none; }
     .hero { padding: 60px 0 80px; }
     .pain, .ownership, .smart-money, .fit, .platforms, .builds, .workflow, .build-process, .why, .pricing, .faq, .book { padding: 80px 0; }
+    footer.foot { padding: 64px 0 28px; }
+    footer.foot .foot-top { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; align-items: start; }
+    footer.foot .foot-mid { padding: 28px 0; gap: 20px; }
+    footer.foot .foot-links { gap: 18px 22px; }
+    footer.foot .foot-bottom { flex-direction: column; align-items: flex-start; gap: 8px; padding-top: 22px; }
     .founder { padding: 64px 0; }
     .founder .inner { grid-template-columns: 1fr; text-align: center; gap: 24px; }
     .founder .avatar { margin: 0 auto; }
@@ -1510,12 +1529,32 @@
 </section>
 
 <footer class="foot">
-  <div class="wrap inner">
-    <div class="brand">
-      <span class="mark">H</span>
-      <span>Harri · Built in Miami, by a contractor, for contractors</span>
+  <div class="wrap">
+    <div class="foot-top">
+      <h2 class="foot-statement">Stop running your back office. <em>Start running your business.</em></h2>
+      <div class="foot-cta-col">
+        <p>Book a free 30-minute audit. I map where the leaks are and tell you straight if Harri is worth it for you. No pitch deck, no follow-up funnel.</p>
+        <a href="#book" class="foot-cta">Book a free audit <span class="arr">→</span></a>
+      </div>
     </div>
-    <div>© 2026 Harri</div>
+
+    <div class="foot-mid">
+      <a class="foot-brand" href="#">
+        <span class="mark">H</span>
+        <span>Harri</span>
+      </a>
+      <div class="foot-links">
+        <a href="#how">How it works</a>
+        <a href="#ownership">Ownership</a>
+        <a href="#faq">FAQ</a>
+        <a href="#book">Book a call</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Harri · Built in Miami, by a contractor, for contractors.</span>
+      <span class="meta">v1.0 · Made with care</span>
+    </div>
   </div>
 </footer>
 
